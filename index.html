@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>Note Application</title>
+    <script src="https://kit.fontawesome.com/1aabb20c04.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <H1>MY NOTES</H1>
+        <hr>
+        <form class="form-group">
+            <label class="note">Add a new note:</label>
+            <div class="input-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="note1" required>
+            </div>
+            <div class="input-group">
+                <label for="Description">Description</label>
+                <input type="text" class="form-control" id="note2" required>
+            </div>
+             <div class="input-group-checkbox">
+                <input type="checkbox" id="important">
+                <label>Important</label>
+            </div>
+            <div class="input-group-append">
+                <button  class="btn btn-outline-secondary">Add Note</button>
+            </div>
+        </form>
+        <ul class="ul">
+        </ul>
+        <div class="search-field">
+            <input type="text" class="form-control" placeholder="Search in notes">
+        </div>
+    </div>
+    <div class="edit_container">
+        <form class="editFormGroup">
+            <label class="note">Edit note:</label>
+            <div class="input-group">
+                <label for="title">Title</label>
+                <input type="text" class="form-control" id="editNote1" required>
+            </div>
+            <div class="input-group">
+                <label for="Description">Description</label>
+                <input type="text" class="form-control" id="editNote2" required>
+            </div>
+             <div class="input-group-checkbox">
+                <input type="checkbox" id="editImportant">
+                <label>Important</label>
+            </div>
+            <div class="input-group-append">
+                <button id="updateButton" class="btn btn-outline-secondary">Save changes</button>
+            </div>
+        </form>
+        <ul class="edit-ul">
+        </ul>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.21.1/firebase-firestore.js"></script>
+    
+    <script>
+      // Import the functions you need from the SDKs you need
+      // The import doesn't work so i used a script tag with source instead and changed the version
+      // import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js";
+      // import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js";
+    
+      // Your web app's Firebase configuration
+            const firebaseConfig = {
+        apiKey: "AIzaSyDCG-vRTg18f3BF3luszdffwWw0NDSA-sQ",
+        authDomain: "notes-app-6032a.firebaseapp.com",
+        projectId: "notes-app-6032a",
+        storageBucket: "notes-app-6032a.appspot.com",
+        messagingSenderId: "497498427771",
+        appId: "1:497498427771:web:803346eecd309ae09aedde"
+        };
+    
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();     
+    </script>
+</body>
+</html>
